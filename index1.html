@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CPM MOBILE STORE | Newly Launched Mobile Store</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#050505;
+color:#fff;
+line-height:1.6;
+}
+
+a{
+text-decoration:none;
+}
+
+section{
+padding:80px 8%;
+}
+
+.container{
+max-width:1300px;
+margin:auto;
+}
+
+h2{
+font-size:40px;
+margin-bottom:15px;
+font-weight:800;
+background:linear-gradient(90deg,#ffffff,#bdbdbd,#ffffff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+p{
+color:#d8d8d8;
+}
+
+.btn{
+display:inline-block;
+padding:16px 32px;
+border-radius:40px;
+font-weight:700;
+margin:10px;
+transition:.4s;
+}
+
+.amazon{
+background:#ff9900;
+color:#000;
+}
+
+.amazon:hover{
+transform:translateY(-5px);
+box-shadow:0 0 20px #ff9900;
+}
+
+.whatsapp{
+background:#25D366;
+color:#fff;
+}
+
+.whatsapp:hover{
+transform:translateY(-5px);
+box-shadow:0 0 20px #25D366;
+}
+
+/* NAV */
+
+nav{
+position:fixed;
+width:100%;
+top:0;
+left:0;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.85);
+backdrop-filter:blur(12px);
+z-index:1000;
+border-bottom:1px solid #333;
+}
+
+.logo{
+font-size:28px;
+font-weight:800;
+letter-spacing:2px;
+}
+
+.logo span{
+color:silver;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+nav ul li a{
+color:#fff;
+font-weight:500;
+transition:.3s;
+}
+
+nav ul li a:hover{
+color:silver;
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+background:
+linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.8)),
+url("https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1500&q=80");
+background-size:cover;
+background-position:center;
+}
+
+.hero-content{
+max-width:700px;
+}
+
+.hero h1{
+font-size:62px;
+font-weight:800;
+margin-bottom:20px;
+}
+
+.hero span{
+color:silver;
+}
+
+.tag{
+display:inline-block;
+background:#202020;
+padding:10px 18px;
+border-radius:30px;
+margin-bottom:20px;
+border:1px solid silver;
+}
+
+.hero p{
+font-size:18px;
+margin-bottom:25px;
+}
+
+/* CARDS */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.card{
+background:#111;
+padding:30px;
+border-radius:18px;
+border:1px solid #2b2b2b;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:silver;
+box-shadow:0 0 30px rgba(255,255,255,.12);
+}
+
+.card h3{
+margin:15px 0;
+}
+
+/* MODELS */
+
+.models{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.phone{
+background:#111;
+border-radius:20px;
+overflow:hidden;
+transition:.4s;
+}
+
+.phone:hover{
+transform:translateY(-8px);
+}
+
+.phone img{
+width:100%;
+height:250px;
+object-fit:cover;
+}
+
+.phone-info{
+padding:20px;
+}
+
+.price{
+color:#ffcc00;
+font-size:22px;
+font-weight:bold;
+margin-top:10px;
+}
+
+/* OFFER */
+
+.offer{
+background:linear-gradient(135deg,#191919,#333,#191919);
+text-align:center;
+border-top:1px solid silver;
+border-bottom:1px solid silver;
+}
+
+.offer h2{
+margin-bottom:25px;
+}
+
+.offer-box{
+font-size:24px;
+font-weight:700;
+padding:25px;
+border:1px solid silver;
+display:inline-block;
+border-radius:15px;
+}
+
+/* Gallery */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+margin-top:40px;
+}
+
+.gallery img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:15px;
+transition:.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+/* Reviews */
+
+.review-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.review{
+background:#111;
+padding:25px;
+border-left:5px solid silver;
+border-radius:15px;
+}
+
+.stars{
+color:#FFD700;
+font-size:22px;
+}
+
+/* CONTACT */
+
+.contact{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+form{
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+input,textarea{
+padding:15px;
+border:none;
+background:#111;
+color:#fff;
+border-radius:10px;
+border:1px solid #444;
+}
+
+textarea{
+height:150px;
+resize:none;
+}
+
+button{
+padding:15px;
+border:none;
+background:silver;
+color:#000;
+font-weight:bold;
+font-size:16px;
+border-radius:40px;
+cursor:pointer;
+}
+
+button:hover{
+background:#fff;
+}
+
+footer{
+padding:30px;
+text-align:center;
+border-top:1px solid #333;
+background:#000;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.hero h1{
+font-size:42px;
+}
+
+nav ul{
+display:none;
+}
+
+.contact{
+grid-template-columns:1fr;
+}
+
+section{
+padding:70px 6%;
+}
+
+}
+</style>
+
+</head>
+<body>
+
+<nav>
+
+<div class="logo">CPM <span>MOBILE STORE</span></div>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#models">Models</a></li>
+<li><a href="#offers">Offers</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#reviews">Reviews</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="tag">
+✨ Newly Launched Mobile Store
+</div>
+
+<h1>Your Next <span>Smartphone</span><br>Starts Here.</h1>
+
+<p>
+Welcome to <strong>CPM MOBILE STORE</strong> – your trusted destination for
+budget-friendly smartphones, latest mobile accessories, exciting festive offers,
+and genuine customer service.
+</p>
+
+<a href="https://amazon.in" class="btn amazon" target="_blank">
+🛒 Order on Amazon
+</a>
+
+<a href="https://wa.me/919999999999" class="btn whatsapp">
+📱 Order on WhatsApp
+</a>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="container">
+
+<h2>Why Choose CPM MOBILE STORE?</h2>
+
+<p>
+Whether you're a student, working professional, gamer, or buying a phone
+for your family, we offer the best value for money with trusted brands,
+excellent customer support, and affordable pricing.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>📱 Newly Launched</h3>
+<p>Modern mobile showroom with premium shopping experience.</p>
+</div>
+
+<div class="card">
+<h3>💰 Budget Friendly</h3>
+<p>Affordable smartphones for every budget without compromising quality.</p>
+</div>
+
+<div class="card">
+<h3>🛡 Genuine Products</h3>
+<p>100% authentic mobiles and accessories from leading brands.</p>
+</div>
+
+<div class="card">
+<h3>⚡ Fast Service</h3>
+<p>Friendly staff, quick billing and hassle-free shopping.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- MODELS -->
+
+<section id="models">
+
+<div class="container">
+
+<h2>Model Highlights</h2>
+
+<div class="models">
+
+<div class="phone">
+<img src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?auto=format&fit=crop&w=800&q=80">
+<div class="phone-info">
+<h3>Premium Smartphones</h3>
+<p>Latest Android flagship devices.</p>
+<div class="price">Starting ₹14,999</div>
+</div>
+</div>
+
+<div class="phone">
+<img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=800&q=80">
+<div class="phone-info">
+<h3>Camera Phones</h3>
+<p>Capture life's beautiful moments.</p>
+<div class="price">Starting ₹12,499</div>
+</div>
+</div>
+
+<div class="phone">
+<img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=800&q=80">
+<div class="phone-info">
+<h3>Gaming Phones</h3>
+<p>Powerful performance and smooth gaming.</p>
+<div class="price">Starting ₹18,999</div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- OFFERS -->
+
+<section class="offer" id="offers">
+
+<h2>Festive Offers</h2>
+
+<div class="offer-box">
+🎉 Up to 30% OFF<br><br>
+
+🎁 Free Mobile Accessories*
+
+<br><br>
+
+💳 Easy EMI Available
+
+</div>
+
+</section>
+
+<!-- Gallery -->
+
+<section id="gallery">
+
+<div class="container">
+
+<h2>Photo Gallery</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=700&q=80">
+
+<img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=700&q=80">
+
+<img src="https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?auto=format&fit=crop&w=700&q=80">
+
+<img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=700&q=80">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Reviews -->
+
+<section id="reviews">
+
+<div class="container">
+
+<h2>Customer Reviews</h2>
+
+<div class="review-grid">
+
+<div class="review">
+<div class="stars">★★★★★</div>
+<p>"Excellent pricing and very friendly service. Highly recommended!"</p>
+<h4>- Rahul</h4>
+</div>
+
+<div class="review">
+<div class="stars">★★★★★</div>
+<p>"Bought my first smartphone here. Great offers and genuine products."</p>
+<h4>- Priya</h4>
+</div>
+
+<div class="review">
+<div class="stars">★★★★★</div>
+<p>"Amazing collection with affordable prices. Will visit again."</p>
+<h4>- Karthik</h4>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="container contact">
+
+<div>
+
+<h2>Visit CPM MOBILE STORE</h2>
+
+<p>
+📍 Your Town<br><br>
+
+📞 +91 99999 99999<br><br>
+
+📧 cpmmobilestore@gmail.com
+</p>
+
+<br>
+
+<a href="https://amazon.in" class="btn amazon" target="_blank">
+Order on Amazon
+</a>
+
+<a href="https://wa.me/919999999999" class="btn whatsapp">
+WhatsApp Now
+</a>
+
+</div>
+
+<form>
+
+<input type="text" placeholder="Your Name" required>
+
+<input type="email" placeholder="Email Address" required>
+
+<input type="tel" placeholder="Phone Number">
+
+<textarea placeholder="Your Message"></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>CPM MOBILE STORE</h3>
+
+<p>
+Your Trusted Mobile Destination • Budget Friendly • Genuine Products
+</p>
+
+<p style="margin-top:10px;">
+© 2026 CPM MOBILE STORE. All Rights Reserved.
+</p>
+
+</footer>
+
+</body>
+</html>
